@@ -17,7 +17,7 @@ public class TakingScreenshots {
 		driver.manage().window().maximize();
 		File File = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(File, new File("C:\\Users\\allan\\OneDrive\\Pictures\\Screenshots\\Screenshot.jpeg"));
-		System.out.println("GIT check cheyunne");
+//		System.out.println("GIT check cheyunne");
 	}
 
 }
