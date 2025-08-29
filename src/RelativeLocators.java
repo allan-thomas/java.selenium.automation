@@ -8,7 +8,7 @@ public class RelativeLocators {
 
 	public static void main(String[] args) {
 		System.setProperty("webdriver.chrome.driver",
-				"C://Users//allan//OneDrive//Documents//chromedriver-win64//chromedriver.exe");
+				"C:\\Users\\167557\\Documents\\chromedriver-win64\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("https://rahulshettyacademy.com/angularpractice/");
 		WebElement nameEditBox = driver.findElement(By.cssSelector("[name='name']"));

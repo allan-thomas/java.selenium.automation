@@ -41,6 +41,11 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 
+		<dependency>
+			<groupId>JavaSeleniumLearning</groupId>
+			<artifactId>SeleniumFrameworkDesign</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
