@@ -11,7 +11,9 @@ public class CDPNetworkLogActivity {
 
 	public static void main(String[] args) {
 		
-		System.setProperty("webdriver.chrome.driver", "C:/Users/167557/Documents/chromedriver-win64/chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:/Users/167557/Documents/chromedriver-win64/chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\allan\\OneDrive\\Documents\\chromedriver-win64\\chromedriver.exe");
 
 		ChromeDriver driver = new ChromeDriver();
 		
@@ -32,7 +34,9 @@ public class CDPNetworkLogActivity {
 		devTools.addListener(Network.responseReceived(), response -> {
 			Response resp = response.getResponse();
 			//System.out.println(resp.getUrl());
-			System.out.println(resp.getStatus());
+//			System.out.println(resp.getStatus());
+			if(resp.getStatus().toString().startsWith("4"))
+				System.out.println(resp.getUrl() + ">> is failing with status code :" + resp.getStatus());
 		});
 		
 		driver.get("https://rahulshettyacademy.com/angularAppdemo/");
