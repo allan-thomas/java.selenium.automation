@@ -12,7 +12,10 @@ public class GeoLocWithCDP {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "C:/Users/167557/Documents/chromedriver-win64/chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:/Users/167557/Documents/chromedriver-win64/chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\allan\\OneDrive\\Documents\\chromedriver-win64\\chromedriver.exe");
 
 		ChromeDriver driver = new ChromeDriver();
 
@@ -32,7 +35,7 @@ public class GeoLocWithCDP {
 //		driver.executeCdpCommand("Emulation.setGeolocationOverride", geoLoc);
 
 		driver.get("https://www.google.com/");
-		driver.findElement(By.name("q")).sendKeys("hotels near me", Keys.ENTER);
+		driver.findElement(By.name("q")).sendKeys("Netflix", Keys.ENTER);
 	}
 
 }

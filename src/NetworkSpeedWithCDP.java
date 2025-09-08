@@ -25,7 +25,7 @@ public class NetworkSpeedWithCDP {
 		
 		devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty(), Optional.empty()));
 		
-		devTools.send(Network.emulateNetworkConditions(false, 3000, 20000, 50000, Optional.of(ConnectionType.ETHERNET), Optional.empty(), Optional.empty(), Optional.empty()));
+//		devTools.send(Network.emulateNetworkConditions(false, 3000, 20000, 50000, Optional.of(ConnectionType.ETHERNET), Optional.empty(), Optional.empty(), Optional.empty()));
 		
 		long startTime = System.currentTimeMillis();
 		
@@ -38,6 +38,8 @@ public class NetworkSpeedWithCDP {
 		System.out.println(endTime -  startTime);
 		
 		driver.quit();
+		//14640
+		
 	}
 
 }
