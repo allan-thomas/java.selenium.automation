@@ -14,8 +14,8 @@ public class DatabaseTesting {
 
 		System.setProperty("webdriver.chrome.driver", "C:/Users/167557/Documents/chromedriver-win64/chromedriver.exe");
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\allan\\OneDrive\\Documents\\chromedriver-win64\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver",
+//				"C:\\Users\\allan\\OneDrive\\Documents\\chromedriver-win64\\chromedriver.exe");
 
 		ChromeDriver driver = new ChromeDriver();
 
