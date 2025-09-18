@@ -27,16 +27,16 @@ public class FileUploadWithAutoIT {
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> chromePrefs = new HashMap<>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("download.default_directory", downloadPath+"\\downloads");
-        options.setExperimentalOption("prefs",chromePrefs);
+        chromePrefs.put("download.default_directory", downloadPath + "\\downloads");
+        options.setExperimentalOption("prefs", chromePrefs);
         WebDriver driver1 = new ChromeDriver(options);
         driver1.get("https://freetestdata.com/document-files/doc/");
         WebDriverWait wait = new WebDriverWait(driver1, Duration.ofSeconds(3000));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href*='100KB_DOC.doc']")));
         driver1.findElement(By.cssSelector("a[href*='100KB_DOC.doc']")).click();
-        File file = new File(downloadPath+"/downloads/Free_Test_Data_100KB_DOC.doc");
+        File file = new File(downloadPath + "/downloads/Free_Test_Data_100KB_DOC.doc");
         Thread.sleep(3000);
-        if(file.exists()) {
+        if (file.exists()) {
             System.out.println("File downloaded successfully");
         } else {
             System.out.println("File not downloaded");
