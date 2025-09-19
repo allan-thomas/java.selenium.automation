@@ -38,7 +38,7 @@ public class FileUploadWithAutoIT {
         Thread.sleep(3000);
         if (file.exists()) {
             System.out.println("File downloaded successfully");
-            if(file.delete())
+            if(file.delete()) //deletes the file
                 System.out.println("File deleted successfully");
         } else {
             System.out.println("File not downloaded");
