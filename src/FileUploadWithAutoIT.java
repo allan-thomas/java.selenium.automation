@@ -26,7 +26,7 @@ public class FileUploadWithAutoIT {
         System.out.println(downloadPath);
         ChromeOptions options = new ChromeOptions();
         HashMap<String, Object> chromePrefs = new HashMap<>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
+        //chromePrefs.put("profile.default_content_settings.popups", 0);
         chromePrefs.put("download.default_directory", downloadPath + "\\downloads");
         options.setExperimentalOption("prefs", chromePrefs);
         WebDriver driver1 = new ChromeDriver(options);
@@ -38,6 +38,8 @@ public class FileUploadWithAutoIT {
         Thread.sleep(3000);
         if (file.exists()) {
             System.out.println("File downloaded successfully");
+            if(file.delete())
+                System.out.println("File deleted successfully");
         } else {
             System.out.println("File not downloaded");
         }
