@@ -46,7 +46,5 @@ public class FileUploadWithAutoIT {
             System.out.println("File not downloaded");
         }
         driver1.quit();
-
-
     }
 }
