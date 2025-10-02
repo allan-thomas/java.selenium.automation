@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
 import org.apache.commons.collections4.ArrayStack;
 import org.apache.commons.io.FileUtils;
@@ -26,6 +27,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class InterviewPrep {
@@ -43,24 +45,24 @@ public class InterviewPrep {
 //			
 //		}
 //		
-//		String name ="ammaa";
-//		String revname = new StringBuilder(name).reverse().toString();
-//		if (name.equalsIgnoreCase(revname))
-//			System.out.println("is palindrome");
-//
-//		String text = "Arun";
-//		String[] arr = new String[text.length()];
-//   	     for (int k = 0; k < text.length(); k++) {
-//			if (k % 2 == 0) {
-//				String word ="";
-//				char char1 = text.charAt(k);
-//				char char2 = text.charAt(k+1);
-//				word  = word + char1+ char2;
-//				arr[k]=word;
-//			}
-//		}
-//	    System.out.println(arr[0]);
-//		System.out.println(arr[2]);
+		String name ="ammaa";
+		String revname = new StringBuilder(name).reverse().toString();
+		if (name.equalsIgnoreCase(revname))
+			System.out.println("is palindrome");
+
+		String text = "Arun";
+		String[] arr = new String[text.length()];
+   	     for (int k = 0; k < text.length(); k++) {
+			if (k % 2 == 0) {
+				String word ="";
+				char char1 = text.charAt(k);
+				char char2 = text.charAt(k+1);
+				word  = word + char1+ char2;
+				arr[k]=word;
+			}
+		}
+	    System.out.println(arr[0]);
+		System.out.println(arr[2]);
 //
 //		String[] chararr = {"a","b"};
 //		List<String> chaslist = Arrays.asList(chararr);
@@ -102,24 +104,31 @@ public class InterviewPrep {
 //		
 //		WebElement dobText = driver.findElement(By.cssSelector("label[for='dateofBirth']"));
 
-		String s = "Program";
-		char[] ch = s.toCharArray();
-		boolean[] b = new boolean[s.length()];
+//		String s = "Program";
+//		char[] ch = s.toCharArray();
+//		boolean[] b = new boolean[s.length()];
+//
+//		System.out.println("Character Occurrences:");
+//		for (int i = 0; i < ch.length; i++) {
+//			if (b[i])
+//				continue; // Skip already counted characters
+//			int c = 1;
+//			for (int j = i + 1; j < ch.length; j++) {
+//				if (ch[i] == ch[j]) {
+//					c++;
+//					b[j] = true; // Mark character as counted
+//				}
+//			}
+//			System.out.println(ch[i] + " : " + c);
+		
+		String [] strings = {"Allan","Nikin","Sree","Lu"};
 
-		System.out.println("Character Occurrences:");
-		for (int i = 0; i < ch.length; i++) {
-			if (b[i])
-				continue; // Skip already counted characters
-			int c = 1;
-			for (int j = i + 1; j < ch.length; j++) {
-				if (ch[i] == ch[j]) {
-					c++;
-					b[j] = true; // Mark character as counted
-				}
-			}
-			System.out.println(ch[i] + " : " + c);
-
-		}
-
+		List<String> arrayList = Arrays.asList(strings);
+		
+		ArrayList<String> listt = new ArrayList<String>(arrayList);
+		
+		System.out.println(listt.get(0));
+		
+		Stream.concat(listt.stream(), listt.stream()).forEach(s->System.out.println(s));
 	}
 }
