@@ -9,9 +9,14 @@ import java.lang.reflect.Array;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.commons.collections4.ArrayStack;
@@ -45,24 +50,24 @@ public class InterviewPrep {
 //			
 //		}
 //		
-		String name ="ammaa";
-		String revname = new StringBuilder(name).reverse().toString();
-		if (name.equalsIgnoreCase(revname))
-			System.out.println("is palindrome");
-
-		String text = "Arun";
-		String[] arr = new String[text.length()];
-   	     for (int k = 0; k < text.length(); k++) {
-			if (k % 2 == 0) {
-				String word ="";
-				char char1 = text.charAt(k);
-				char char2 = text.charAt(k+1);
-				word  = word + char1+ char2;
-				arr[k]=word;
-			}
-		}
-	    System.out.println(arr[0]);
-		System.out.println(arr[2]);
+//		String name ="ammaa";
+//		String revname = new StringBuilder(name).reverse().toString();
+//		if (name.equalsIgnoreCase(revname))
+//			System.out.println("is palindrome");
+//
+//		String text = "Arun";
+//		String[] arr = new String[text.length()];
+//   	     for (int k = 0; k < text.length(); k++) {
+//			if (k % 2 == 0) {
+//				String word ="";
+//				char char1 = text.charAt(k);
+//				char char2 = text.charAt(k+1);
+//				word  = word + char1+ char2;
+//				arr[k]=word;
+//			}
+//		}
+//	    System.out.println(arr[0]);
+//		System.out.println(arr[2]);
 //
 //		String[] chararr = {"a","b"};
 //		List<String> chaslist = Arrays.asList(chararr);
@@ -119,16 +124,56 @@ public class InterviewPrep {
 //					b[j] = true; // Mark character as counted
 //				}
 //			}
-//			System.out.println(ch[i] + " : " + c);
+//			System.out.println(ch[i] + " : " + c);}
 		
-		String [] strings = {"Allan","Nikin","Sree","Lu"};
+//		String [] strings = {"Allan","Nikin","Sree","Lu"};
+//
+//		List<String> arrayList = Arrays.asList(strings);
+//		
+//		ArrayList<String> listt = new ArrayList<String>(arrayList);
+//		
+//		System.out.println(listt.get(0));
+//		
+//		Stream.concat(listt.stream(), listt.stream()).forEach(s->System.out.println(s));
+//		
+//		long d = listt.stream().filter(f -> f.length() > 4).limit(1) .count();
+//		
+//		arrayList.stream().filter(f->f.startsWith("A") || f.startsWith("a")).map(m->m.toUpperCase()).forEach(s->System.out.println(s));
+//		
+//		arrayList.stream().sorted(Comparator.reverseOrder()).forEach(s->System.out.println(s));
+//		
+//		System.out.println(d);
+		
+		String word1 = "listen";
+		
+		String word2 = "silent";
+		
+		 char[] charArray1 = word1.toCharArray();
+		 char[] charArray2 = word2.toCharArray();
 
-		List<String> arrayList = Arrays.asList(strings);
-		
-		ArrayList<String> listt = new ArrayList<String>(arrayList);
-		
-		System.out.println(listt.get(0));
-		
-		Stream.concat(listt.stream(), listt.stream()).forEach(s->System.out.println(s));
+		 List<Character> charList1 = new ArrayList<>();
+		 List<Character> charList2 = new ArrayList<>();
+	        
+		 for (int i=0; i<charArray1.length;i++) {
+			 charList1.add(charArray1[i]);
+			 charList2.add(charArray2[i]);
+		 }
+		 
+		 List<Character> sortedList1 = charList1.stream().sorted(Comparator.naturalOrder()).collect(Collectors.toList());
+		 
+		 System.out.println(sortedList1);
+		 
+		 Collections.sort(charList1);
+		 Collections.sort(charList2);
+		 
+		 System.out.println(charList1);
+		 System.out.println(charList2);
+		 
+		 if(charList1.equals(charList2)) {
+			 System.out.println("myre poi ombuu");
+		 }
+		 else
+		 {
+			 System.out.println("no");		 }
 	}
 }
